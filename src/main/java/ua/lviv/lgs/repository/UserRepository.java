@@ -1,4 +1,4 @@
-package ua.lviv.lgs.dao;
+package ua.lviv.lgs.repository;
 
 import java.util.Optional;
 

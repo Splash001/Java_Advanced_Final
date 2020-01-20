@@ -9,15 +9,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import ua.lviv.lgs.domain.User;
 import ua.lviv.lgs.service.UserService;
+import ua.lviv.lgs.service.FacultyService;
 
 @Controller
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private FacultyService facultyService;
 
 	@GetMapping(value = "/registration")
 	public String registration(Model model) {
@@ -45,7 +50,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String welcome(Model model) {
-		return "home";
+	public ModelAndView welcome() {
+		ModelAndView mav = new ModelAndView("home");
+		mav.addObject("faculties", facultyService.getAllFaculties());
+		return mav;
 	}
 }
