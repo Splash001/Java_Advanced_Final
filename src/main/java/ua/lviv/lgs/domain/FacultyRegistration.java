@@ -1,6 +1,8 @@
 package ua.lviv.lgs.domain;
 
 import java.util.List;
+import java.io.IOException;
+import java.util.Base64;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "faculty_registrations")
@@ -28,6 +31,8 @@ public class FacultyRegistration {
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 
+	private String base64;
+
 	@ElementCollection
 	private List<Integer> marks;
 
@@ -40,17 +45,20 @@ public class FacultyRegistration {
 	public FacultyRegistration() {
 	}
 
-	public FacultyRegistration(Faculty faculty, User user, List<Integer> marks) {
+	public FacultyRegistration(Faculty faculty, User user, List<Integer> marks, MultipartFile file) throws IOException {
 		this.faculty = faculty;
 		this.user = user;
 		this.marks = marks;
+		this.base64 = Base64.getEncoder().encodeToString(file.getBytes());
 	}
 
-	public FacultyRegistration(Integer id, Faculty faculty, User user, List<Integer> marks) {
+	public FacultyRegistration(Integer id, Faculty faculty, User user, List<Integer> marks, MultipartFile file)
+			throws IOException {
 		this.id = id;
 		this.faculty = faculty;
 		this.user = user;
 		this.marks = marks;
+		this.base64 = Base64.getEncoder().encodeToString(file.getBytes());
 	}
 
 	public Integer getId() {
@@ -101,4 +109,11 @@ public class FacultyRegistration {
 		this.email = email;
 	}
 
+	public String getBase64() {
+		return base64;
+	}
+
+	public void setBase64(String base64) {
+		this.base64 = base64;
+	}
 }
