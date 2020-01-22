@@ -67,8 +67,8 @@
 								href="${contextPath}/register-for-faculty?facultyId=${currentFaculty.id}&email=${pageContext.request.userPrincipal.name}">
 								Register for the faculty</a> <a
 								class="w3-button w3-block w3-dark-grey"
-								href="${contextPath}/show-enrolled-students?facultyId=${currentFaculty.id}">
-								Show enrolled students</a>
+								href="${contextPath}/show-enrolled-entrants?facultyId=${currentFaculty.id}">
+								Show enrolled entrants</a>
 						</div>
 
 					</c:forEach>

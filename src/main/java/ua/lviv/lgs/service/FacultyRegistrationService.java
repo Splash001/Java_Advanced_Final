@@ -18,7 +18,7 @@ public class FacultyRegistrationService {
 		facultyRegistrationRepo.save(facultyRegistration);
 	}
 
-	public List<FacultyRegistration> showAllRegisteredUsers() {
+	public List<FacultyRegistration> getAllRegisteredUsers() {
 		return facultyRegistrationRepo.findAll();
 	}
 }
