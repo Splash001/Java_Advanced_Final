@@ -1,5 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -63,10 +65,14 @@
 									${currentFaculty.numberOfStudents}</p>
 								<p>Necessary subjects for entry: ${currentFaculty.subjects}</p>
 							</div>
+
+							<security:authorize access="hasRole('ROLE_USER')">
+								<a class="w3-button w3-block w3-dark-grey"
+									href="${contextPath}/register-for-faculty?facultyId=${currentFaculty.id}&email=${pageContext.request.userPrincipal.name}">
+									Register for the faculty</a>
+							</security:authorize>
+
 							<a class="w3-button w3-block w3-dark-grey"
-								href="${contextPath}/register-for-faculty?facultyId=${currentFaculty.id}&email=${pageContext.request.userPrincipal.name}">
-								Register for the faculty</a> <a
-								class="w3-button w3-block w3-dark-grey"
 								href="${contextPath}/show-enrolled-entrants?facultyId=${currentFaculty.id}">
 								Show enrolled entrants</a>
 						</div>
