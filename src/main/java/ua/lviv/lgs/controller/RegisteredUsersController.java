@@ -2,16 +2,18 @@ package ua.lviv.lgs.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import ua.lviv.lgs.domain.Faculty;
 import ua.lviv.lgs.domain.FacultyRegistration;
 import ua.lviv.lgs.domain.FacultyRegistrationMarksComparator;
-import ua.lviv.lgs.service.FacultyService;
 import ua.lviv.lgs.service.FacultyRegistrationService;
+import ua.lviv.lgs.service.FacultyService;
 
 @Controller
 public class RegisteredUsersController {

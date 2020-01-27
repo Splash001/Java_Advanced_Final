@@ -37,7 +37,7 @@
 							and to fill marks from such subjects:</th>
 					</tr>
 					<tr>
-						<td>Upload you photo</td>
+						<td>Upload your photo</td>
 						<td><input type="file" name="image" /></td>
 					</tr>
 
