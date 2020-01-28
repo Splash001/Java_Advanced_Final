@@ -28,7 +28,7 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+	font-family: Poppins-Regular, Open sans, sans-serif;
 }
 
 /*---------------------------------------------*/
@@ -175,7 +175,7 @@ iframe {
 }
 
 .txt2 {
-	font-family: Poppins-Regular;
+	font-family: Poppins-Regular, Open sans;
 	font-size: 13px;
 	line-height: 1.5;
 	color: #666666;
@@ -239,7 +239,7 @@ iframe {
 }
 
 .login100-form-title {
-	font-family: Poppins-Bold;
+	font-family: Poppins-Bold, Open Sans;
 	font-size: 24px;
 	color: #333333;
 	line-height: 1.2;
@@ -258,7 +258,7 @@ iframe {
 }
 
 .input100 {
-	font-family: Poppins-Medium;
+	font-family: Poppins-Medium, Open sans;
 	font-size: 15px;
 	line-height: 1.5;
 	color: #666666;
@@ -290,14 +290,12 @@ iframe {
 	animation: anim-shadow 0.5s ease-in-out forwards;
 }
 
-@
--webkit-keyframes anim-shadow {to { box-shadow:0px0px70px25px;
+@-webkit-keyframes anim-shadow {to { box-shadow:0px0px70px25px;
 	opacity: 0;
 }
 
 }
-@
-keyframes anim-shadow {to { box-shadow:0px0px70px25px;
+@keyframes anim-shadow {to { box-shadow:0px0px70px25px;
 	opacity: 0;
 }
 
@@ -345,7 +343,8 @@ keyframes anim-shadow {to { box-shadow:0px0px70px25px;
 }
 
 .login100-form-btn {
-	font-family: Montserrat-Bold;
+	font-family: Montserrat-Bold, Open sans;
+	font-weight: bold;
 	font-size: 15px;
 	line-height: 1.5;
 	color: #fff;
