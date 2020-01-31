@@ -130,4 +130,53 @@ public class FacultyRegistration {
 	public Integer getSumOfMarks() {
 		return sumOfMarks;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((base64 == null) ? 0 : base64.hashCode());
+		result = prime * result + ((faculty == null) ? 0 : faculty.hashCode());
+		result = prime * result + ((marks == null) ? 0 : marks.hashCode());
+		result = prime * result + ((sumOfMarks == null) ? 0 : sumOfMarks.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FacultyRegistration other = (FacultyRegistration) obj;
+		if (base64 == null) {
+			if (other.base64 != null)
+				return false;
+		} else if (!base64.equals(other.base64))
+			return false;
+		if (faculty == null) {
+			if (other.faculty != null)
+				return false;
+		} else if (!faculty.equals(other.faculty))
+			return false;
+		if (marks == null) {
+			if (other.marks != null)
+				return false;
+		} else if (!marks.equals(other.marks))
+			return false;
+		if (sumOfMarks == null) {
+			if (other.sumOfMarks != null)
+				return false;
+		} else if (!sumOfMarks.equals(other.sumOfMarks))
+			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
+		return true;
+	}
 }

@@ -25,18 +25,15 @@ public class Faculty {
 	private int numberOfStudents;
 	
 	@ElementCollection
-	private List<Subject> subjects;
+	private List<Subjects> subjects;
 
-	public Faculty() {
-	}
-
-	public Faculty(Faculties name, int numberOfStudents, List<Subject> subjects) {
+	public Faculty(Faculties name, int numberOfStudents, List<Subjects> list) {
 		this.name = name;
 		this.numberOfStudents = numberOfStudents;
-		this.subjects = subjects;
+		this.subjects = list;
 	}
 
-	public Faculty(Integer id, Faculties name, int numberOfStudents, List<Subject> subjects) {
+	public Faculty(Integer id, Faculties name, int numberOfStudents, List<Subjects> subjects) {
 		this.id = id;
 		this.name = name;
 		this.numberOfStudents = numberOfStudents;
@@ -67,11 +64,11 @@ public class Faculty {
 		this.numberOfStudents = numberOfStudents;
 	}
 
-	public List<Subject> getSubjects() {
+	public List<Subjects> getSubjects() {
 		return subjects;
 	}
 
-	public void setSubjects(List<Subject> subjects) {
+	public void setSubjects(List<Subjects> subjects) {
 		this.subjects = subjects;
 	}
 
